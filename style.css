@@ -1,0 +1,214 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #afcfe9;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #ff5b8f;
+  text-shadow: 3px 3px 5px rgba(255, 0, 100, 0.6);
+}
+
+.click-btn {
+  padding: 15px 30px;
+  background-color: #ff5b8f;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.click-btn:hover {
+  transform: scale(1.1);
+  background-color: #ff007c;
+}
+
+.message {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 1px;
+  color: #ff5b8f;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+
+.question {
+  margin-top: 30px;
+}
+
+.answer-btn {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 1.3rem;
+  background-color: #ff5b8f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.answer-btn:hover {
+  background-color: #ff007c;
+}
+
+/* Animation for love */
+@keyframes loveAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+    color: #ff5b8f;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    color: #ff5b8f;
+  }
+}
+
+/* Animation for sadness */
+@keyframes sadnessAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    color: #2d2d2d;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+    color: #00bcd4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    color: #00bcd4;
+  }
+}
+
+.love-animation, .sadness-animation {
+  font-size: 2.5rem;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  animation: 2s ease-in-out infinite;
+}
+
+.love-animation {
+  color: #ff5b8f;
+  animation-name: loveAnimation;
+}
+
+.sadness-animation {
+  color: #00bcd4;
+  animation-name: sadnessAnimation;
+}
+
+/* Stars animation */
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: star-fall 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes star-fall {
+  0% {
+    transform: translateY(-100px) scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(300px) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(500px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Add background music */
+audio {
+  display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .click-btn {
+    font-size: 1.3rem;
+    padding: 12px 24px;
+  }
+
+  .message {
+    font-size: 1.5rem;
+    padding: 20px;
+  }
+
+  .answer-btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+
+  .love-animation, .sadness-animation {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .click-btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+
+  .message {
+    font-size: 1.4rem;
+    padding: 15px;
+  }
+
+  .answer-btn {
+    font-size: 1rem;
+    padding: 8px 18px;
+  }
+
+  .love-animation, .sadness-animation {
+    font-size: 1.8rem;
+  }
+}
